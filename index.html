@@ -9,16 +9,18 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
     <title>giphy search</title>
 </head>
 
 <body>
-    
+
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="buttons"></div>
+                    <div id="buttonsSaved"></div>
                 </div>
 
 
@@ -27,11 +29,10 @@
                         <form>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1"></label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="Searcher of Gif's">
+                                <input type="text" class="form-control" id="user-input" placeholder="Searcher of Gif's">
                             </div>
                         </form>
-                        <button type="button" class="btn btn-secondary">Explore</button>
+                        <button type="button" id="submitBtn" class="btn btn-secondary">Explore</button>
 
 
                     </div>
@@ -40,6 +41,12 @@
         </div>
     </div>
 
+
+    <div id="gifDisplay">
+
+    </div>
+
+    <script src="javascript/app.js"></script>
 </body>
 
 </html>
