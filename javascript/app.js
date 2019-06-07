@@ -7,6 +7,7 @@ var usersInput;
 
 
 
+
 function addBtnToPage() {
     for (x = 0; x < topics.length; x++) {
         // Creating and storing an button tag
@@ -14,6 +15,8 @@ function addBtnToPage() {
         //Adds a attribute to the topic button with a unique number depending on its index
         topicBtn.attr("data-number", x);
         topicBtn.attr("class", "btn btn-dark");
+
+        
         //Adds the text of the button as the topic
         topicBtn.text(topics[x]);
         console.log(topicBtn)
@@ -55,6 +58,7 @@ window.onload = function () {
         topicBtn.attr("data-number", x);
         topicBtn.attr("class", "btn btn-dark");
 
+
         //Adds the text of the button as the topic
         topicBtn.append(usersInput)
         $("#buttonsSaved").prepend(topicBtn)
@@ -70,7 +74,7 @@ window.onload = function () {
 
 
         var imageRepo = []
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + usersInput + "&limit=10&offset=0&rating=R&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + usersInput + "&limit=10&offset=0&rating=PG13&lang=en";
         // console.log(queryURL)
         $.ajax({
             url: queryURL,
@@ -81,11 +85,13 @@ window.onload = function () {
                 var imageStill = response.data[x].images.fixed_height_still.url
                 var animatedImage = response.data[x].images.fixed_height.url;
                 var rating = response.data[x].rating;
-                console.log(rating)
                 // Creating and storing an image tag
                 gifImage = $("<img>");
+                gifRating = $("<h2>")
+                gifRating.text("Gif Rating- "+rating)
+                $("#gifDisplay").prepend(gifRating)
 
-                // Setting the catImage src attribute to imageUrl
+                //Giving the gif images attributes 
                 gifImage.attr("src", imageStill);
                 gifImage.attr("data-animate", animatedImage);
                 gifImage.attr("data-still", imageStill);
@@ -101,7 +107,6 @@ window.onload = function () {
                 })
             
 
-                // Prepending the catImage to the images div
                 $("#gifDisplay").prepend(gifImage);
 
                 var results = {
