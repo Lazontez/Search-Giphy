@@ -16,7 +16,7 @@ function addBtnToPage() {
         topicBtn.attr("data-number", x);
         topicBtn.attr("class", "btn btn-dark");
 
-        
+
         //Adds the text of the button as the topic
         topicBtn.text(topics[x]);
         console.log(topicBtn)
@@ -39,7 +39,7 @@ window.onload = function () {
     function getUsersInput() {
         //makes a variable called user-input with the value of the input box
         usersInput = $("#user-input").val().trim();
-        
+
         //clear the input box
         // clearInputBox()    
         //adds the user input variable to the topics array
@@ -88,7 +88,7 @@ window.onload = function () {
                 // Creating and storing an image tag
                 gifImage = $("<img>");
                 gifRating = $("<h2>")
-                gifRating.text("Gif Rating- "+rating)
+                gifRating.text("Gif Rating- " + rating)
                 $("#gifDisplay").prepend(gifRating)
 
                 //Giving the gif images attributes 
@@ -103,9 +103,9 @@ window.onload = function () {
                 //css for images
                 gifImage.css({
                     "margin": "2px",
-                     
+
                 })
-            
+
 
                 $("#gifDisplay").prepend(gifImage);
 
